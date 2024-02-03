@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 export default function subReviews({
   params,
 }: {
@@ -6,9 +8,11 @@ export default function subReviews({
     reviewId: string;
   };
 }) {
-  return (
+  return Number(params.reviewId) <= 100 ? (
     <h1>
       Reviews {params.reviewId} of Product {params.productId}
     </h1>
+  ) : (
+    notFound()
   );
 }

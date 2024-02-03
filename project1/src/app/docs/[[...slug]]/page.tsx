@@ -1,5 +1,4 @@
 export default function docs({ params }: { params: { slug: string[] } }) {
-    console.log(params)
   if (params?.slug?.length === 2) {
     return (
       <h1>
